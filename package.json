@@ -4,7 +4,11 @@
 	"displayName": "URP Inscattering",
 	"description": "A URP render feature that add secondary light contribution to atmosphere rendering",
 	"unity": "2020.1",
-	"keywords": ["URP", "volumetric", "light"],
+	"dependencies": {
+		"com.unity.render-pipelines.core": "8.3.1",
+		"com.unity.render-pipelines.universal": "8.3.1"
+	},
+	"keywords": [ "URP", "volumetric", "light" ],
 	"author": {
 		"name": "Herman Lederer",
 		"email": "germans.lederers@gmail.com",
