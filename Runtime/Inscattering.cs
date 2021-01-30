@@ -2,7 +2,7 @@
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-namespace HL.Inscattering
+namespace HL.URPInscattering
 {
 	public class Inscattering : ScriptableRendererFeature
 	{

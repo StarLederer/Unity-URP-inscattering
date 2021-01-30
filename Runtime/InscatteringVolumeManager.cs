@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace HL.Inscattering
+namespace HL.URPInscattering
 {
 	public class InscatteringVolumeManager
 	{

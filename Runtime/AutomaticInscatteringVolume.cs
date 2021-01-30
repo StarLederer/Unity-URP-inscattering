@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HL.Inscattering
+namespace HL.URPInscattering
 {
 	[ExecuteAlways]
 	[RequireComponent(typeof(Light))]
