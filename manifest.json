@@ -1,0 +1,13 @@
+{
+	"name": "com.hermanlederer.urp-inscattering",
+	"version": "0.0.0",
+	"displayName": "URP Inscattering",
+	"description": "A URP render feature that add secondary light contribution to atmosphere rendering",
+	"unity": "2020.1",
+	"keywords": ["URP", "volumetric", "light"],
+	"author": {
+		"name": "Herman Lederer",
+		"email": "germans.lederers@gmail.com",
+		"url": "https://hermanlederer.github.io/"
+	}
+}
