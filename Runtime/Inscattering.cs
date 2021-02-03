@@ -84,9 +84,6 @@ namespace HL.URPInscattering
 
 				//4> Blit for each InscatteringVolume
 				m_InscatteringMaterial.EnableKeyword("_SPHERICAL_VOLUME");
-#if !UNITY_EDITOR
-				m_InscatteringMaterial.EnableKeyword("_FLIP_UV");
-#endif
 				foreach (InscatteringVolume volume in InscatteringVolumeManager.InscatteringVolumes)
 				{
 					cmd.SetGlobalVector("_VolumePosition", volume.transform.position);

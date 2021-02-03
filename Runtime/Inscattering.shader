@@ -9,7 +9,6 @@ Shader "Hidden/Inscattering"
     }
 
     HLSLINCLUDE
-    	#pragma multi_compile_local _ _FLIP_UV
     	#pragma multi_compile_local _ _SPHERICAL_VOLUME
 
         #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
@@ -375,7 +374,7 @@ Shader "Hidden/Inscattering"
             UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
 
             float2 uv = UnityStereoTransformScreenSpaceTex(input.uv);
-            #if _FLIP_UV
+            #if !UNITY_UV_STARTS_AT_TOP
             	uv.y = 1 - uv.y;
             #endif
 
