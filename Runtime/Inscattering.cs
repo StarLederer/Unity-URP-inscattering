@@ -21,13 +21,13 @@ namespace HL.URPInscattering
 			private Vector4[] vectorArray;
 
 			// Constructor
-			public InscatteringPass(Material material)
+			public InscatteringPass()
 			{
-				m_InscatteringMaterial = material;
 				m_TempTexture.Init("_TempTexture");
 			}
 
 			public void SetSource(RenderTargetIdentifier source) => m_Source = source;
+			public void SetMaterial(Material material) => m_InscatteringMaterial = material;
 
 			public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
 			{
@@ -111,13 +111,14 @@ namespace HL.URPInscattering
 
 		public override void Create()
 		{
-			var material = new Material(Shader.Find("Hidden/Inscattering"));
-			m_InscatteringPass = new InscatteringPass(material);
-			m_InscatteringPass.renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
+			m_InscatteringPass = new InscatteringPass();
 		}
 
 		public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
 		{
+			var material = new Material(Shader.Find("Hidden/Inscattering"));
+			m_InscatteringPass.SetMaterial(material);
+			m_InscatteringPass.renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
 			m_InscatteringPass.SetSource(renderer.cameraColorTarget);
 			renderer.EnqueuePass(m_InscatteringPass);
 		}
